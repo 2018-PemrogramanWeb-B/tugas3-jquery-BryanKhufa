@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="style3.css">
+	<title>Tugas 3 - PWEB B</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script> 
+		$(document).ready(function(){
+	    	$("button").click(function(){
+	      	  $('#Animation')
+		        .animate({width: '300px', opacity: '0.8'}, "fast")
+		        .animate({height: '50px', opacity: '0.4'}, "slow")
+		        .animate({width: '250px', opacity: '0.8'}, "slow")
+		        .animate({width: '89px', opacity: '0.8'}, "slow")
+		        .animate({width: '2550px', opacity: '0.8'}, "slow")
+		        .animate({height: '20px', opacity: '0.8'}, "slow")
+		        .animate({width: '89px', opacity: '0.8'}, "slow")
+		    });
+
+		    $('#Explanation').click(function(){
+		    	$('#Explanation').text("Function : To change the content of the attributes of html");
+		    });
+		    $('#Explanation').mouseleave(function(){
+		    	$('#Explanation').text("Function");
+		    });
+
+			$("#inputan").on("keyup", function() {
+			    var value = $(this).val().toLowerCase();
+			    $("#ini_tabel tr").filter(function() {
+			      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+			    });
+			});
+		});
+</script>
+</head>
+
+<body>
+	<h1>JQuery</h1>
+	<h2>Learning</h2>
+
+	<div id="body_html">
+		<div>
+			<h3>JQuery Animation</h3>
+			<p>The JQuery animate() method is used to create custom animations.</p>
+			<button id="Tombol">Start Animation</button>
+			<p id="Animation">EXAMPLE</p>
+		</div>
+
+		<div>
+			<h4>JQuery HTML Set Content and Attributes</h4>
+			<p id="Explanation">Click Here!</p>
+		</div>
+
+		<div>
+			<h5>JQuery Filter</h5>
+			<form>
+			    Find on Table:<br>
+			    <input id="inputan" type="text" name="Find">
+			    <table>
+			    <thead>
+				    <tr>	
+				      <th>Mata Kuliah</th>
+				      <th>Kelas</th>
+				      <th>Nilai</th>
+				 	 </tr>
+			    </thead>
+			    <tbody id="ini_tabel">
+				    <tr class="isi_tabel">
+				      <th>Dasar Pemrograman</th>
+				      <th>B</th>
+				      <th>AB</th>
+				    </tr>
+				    <tr class="isi_tabel">
+						<th>Sistem Digital</th>
+						<th>C</th>
+						<th>AB</th>	      
+		    		</tr>
+		    		<tr class="isi_tabel">
+		    			<th>Matematika Diskrit</th>
+		    			<th>D</th>
+		    			<th>B</th>
+		    		</tr>
+		    		<tr class="isi_tabel">
+		    			<th>Organisasi Komputer</th>
+		    			<th>C</th>
+		    			<th>A</th>
+		    		</tr>
+	    		</tbody>
+	 		 </table>
+			</form>
+		</div>
+	</div>
+</body>
+</html>
